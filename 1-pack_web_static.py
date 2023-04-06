@@ -8,7 +8,8 @@ from fabric.decorators import run_once
 
 @runs_once
 def do_pack():
-    local("mkdir versions")
+    """ generate a .tgz folder"""
+    local("mkdir -p versions")
 
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
     archive_name = "web_static_{}.tgz".format(timestamp)
